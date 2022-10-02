@@ -1,0 +1,257 @@
+*,
+* {
+    background-color: black;
+}
+*:before,
+*:after {
+    box-sizing: border-box;
+    background-clip: padding-box;
+}
+
+.container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.skull {
+    position: relative;
+    width: 16em;
+    height: 10em;
+    border: solid .5em white;
+    border-radius: 8em 8em 3em 3em;
+    background: white;
+    z-index: 4;
+}
+
+.teeth  {
+    position: absolute;
+    bottom: -2.75em;
+    left: 2.5em;
+    z-index: 7;
+    text-align: center;
+}
+
+.tooth {
+    display: inline-block;
+    margin-left: -.55em;
+    width: 3em;
+    height: 3em;
+    background-color: white;
+    border: solid black;
+    border-top-width: 0;
+    border-radius: 0 0 1em 1em;
+}
+
+.tooth:first-child {
+    margin-left: 0;
+}
+
+.eye1 {
+    position: absolute;
+    top: 6em;
+    left: 2em;
+    width: 4em;
+    height: 2.5em;
+    background: black;
+    border: solid .5em black;
+    border-radius: .5em .5em 2em 2em;
+  }
+.eye2 {
+    position: absolute;
+    top: 6em;
+    right: 2em;
+    width: 4em;
+    height: 2.5em;
+    background: black;
+    border: solid .5em black;
+    border-radius: .5em .5em 2em 2em;
+  }
+
+  .pupil {
+    position: absolute;
+    bottom: 1rem;
+    left: 1.4em;
+    width: 1px;
+    height: 1px;
+    background: red;
+    border: solid .5em red;
+    border-radius: .5em .5em;
+    -webkit-animation: fadeOut infinite 1s ease, ease-in-out;
+    -moz-animation: fadeOut ease 8s;
+    -webkit-animation-duration: 7s;
+  }
+
+.title__text {
+    color: orange;
+    font-family: 'Creepster', cursive;
+    font-size: xx-large;
+    position: absolute;
+    top: 10px;
+}
+.h1 {
+    text-align: center;
+    padding: 50px;
+}
+
+html,
+body,
+.box .content {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: black;
+}
+
+.box {
+	width: 350px;
+	height: 100px;
+	box-sizing: border-box;
+	padding: 10px;
+	position: absolute;
+	overflow: hidden;
+    bottom: 10px;
+}
+
+.box::before {
+	content: '';
+	position: absolute;
+	width: 150%;
+	height: 650%;
+	background: repeating-linear-gradient(
+			black 0%,
+			black 7.5px,
+			yellow 7.5px,
+			yellow 15px,
+			black 15px,
+			black 22.5px,
+			yellow 22.5px,
+			yellow 30px);
+	transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+	animation: animate 20s linear infinite;
+}
+
+.box .content {
+  /*display: none;*/
+	position: relative;
+	background-color: black;
+	flex-direction: column;
+	box-sizing: border-box;
+	padding: 30px;
+	text-align: center;
+	font-family: sans-serif;
+	z-index: 2;
+    
+}
+
+.box,
+.box .content {border-radius: 2px;}
+
+.box .content p {
+	color: red;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 1.75rem;
+  letter-spacing: .075rem;
+}
+
+.box .content a {
+  text-decoration: none;
+  color: black;
+}
+
+.box .content a:hover {
+  color: red;
+  font-size: 2.25rem;
+  transition: font-size 0.25s ease;
+}
+
+@keyframes animate {
+	from {background-position: 0;}
+	to {background-position: 0 250px;}
+}
+
+
+
+@-webkit-keyframes fadeOut {
+    0%{opacity: 1;}
+    100% {opacity: 0;}
+}
+@-moz-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+
+@-o-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+    }
+  }
+  
+@-ms-keyframes fadeOut {
+    0% {
+      opacity:1;
+    }
+    100% {
+      opacity:0;
+  }
+}
+
+#bg{
+    padding: 16em 0 13em 0;
+    background-attachment: fixed;
+         background-image: url("http://lorempixel.com/g/1200/600/nature/"), url("http://lorempixel.com/g/1200/200/nature/");
+         background-position: center top;
+         background-size: cover;
+         line-height: 1.75;
+         text-align: center;
+   z-index: -2;
+ }
+
+.banner {
+    padding: 16em 0 13em 0;
+    background-attachment: fixed;
+    background-image: url("http://lorempixel.com/g/1200/600/nature/"), url("http://lorempixel.com/g/1200/200/nature/");
+    background-position: center top;
+    background-size: cover;
+    line-height: 1.75;
+    text-align: center;
+-webkit-filter: brightness(3);
+filter: brightness(3);
+-o-filter: brightness(3);
+-moz-filter: brightness(3);
+z-index: -1;
+}
+
+.flashit{
+    -webkit-animation: flash ease-out 10s infinite;
+    -moz-animation: flash ease-out 10s infinite;
+    animation: flash ease-out 10s infinite;
+    animation-delay: 2s;
+    }
+    @-webkit-keyframes flash {
+        0% { opacity: 1; } 
+      2% { opacity: 0; }
+        3% { opacity: 0.6; }
+      4% { opacity: 0.2; }
+      6% { opacity: 0.9; } 
+        100% { opacity: 1; }
+    }
+    @keyframes flash {
+        0% { opacity: 1; } 
+        2% { opacity: 0; }
+        3% { opacity: 0.6; }
+        4% { opacity: 0.2; }
+        6% { opacity: .9; } 
+        100% { opacity: 1; }
+    }
+
